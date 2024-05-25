@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="warnabg">#FFA09E</color>
+    <color name="signin">#FFCFCE</color>
+    <color name="signup">#FFE0DF</color>
+    <color name="bgbox">#F3AFAF</color>
+    <color name="font">#FFECEC</color>
+    <color name="font2">#E46262</color>
+    <color name="bghome">#FFC0BE</color>
+    <color name="menu">#AA6B69</color>
+    <color name="button">#D48584</color>
+
+
+</resources>

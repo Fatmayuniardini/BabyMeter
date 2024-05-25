@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Baby Meter</string>
+    <string name="logo_img" />
+    <string name="btn_register">REGISTER</string>
+    <string name="login">LOGIN</string>
+    <string name="login_account">LOGIN ACCOUNT</string>
+    <string name="username">"        Username"</string>
+    <string name="password">"        Password   "</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="login_havent_account">
+         <font color="#FFECEC"><b>Don’t have an account?</b></font>
+        <font color="#E46262"><b>Register</b></font>
+    </string>
+    <string name="create_an_account">Create an account</string>
+    <string name="nik">"        NIK"</string>
+    <string name="email">"        Email"</string>
+    <string name="have_an_account">
+         <font color="#FFECEC"><b>Already have an account?</b></font>
+        <font color="#E46262"><b>Login</b></font>
+    </string>
+
+
+</resources>
