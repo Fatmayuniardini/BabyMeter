@@ -136,7 +136,7 @@
         app:layout_constraintTop_toBottomOf="@id/til_password" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_login"
+        android:id="@+id/btn_register"
         style="@style/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -148,12 +148,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tv_havent_account"
+        android:id="@+id/tv_have_account"
         style="@style/SubTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="-40dp"
-        android:text="@string/login_havent_account"
+        android:text="@string/have_an_account"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
