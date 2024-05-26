@@ -18,6 +18,9 @@
          <font color="#FFECEC"><b>Already have an account?</b></font>
         <font color="#E46262"><b>Login</b></font>
     </string>
+    <string name="hello_world">hello world</string>
+    <string name="welcome_to_home">Welcome to home</string>
+    <string name="logout">LOGOUT</string>
 
 
 </resources>
