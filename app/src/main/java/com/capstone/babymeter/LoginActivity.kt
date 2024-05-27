@@ -3,7 +3,7 @@ package com.capstone.babymeter
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.capstone.babymeter.databinding.ActivityLoginBinding
+import com.example.babymeter.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
 

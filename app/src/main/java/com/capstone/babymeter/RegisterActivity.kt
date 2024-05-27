@@ -3,7 +3,8 @@ package com.capstone.babymeter
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.capstone.babymeter.databinding.ActivityRegisterBinding
+import com.example.babymeter.databinding.ActivityRegisterBinding
+
 
 class RegisterActivity : AppCompatActivity() {
 
