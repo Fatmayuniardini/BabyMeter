@@ -2,15 +2,11 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="warnabg">#FFA09E</color>
-    <color name="signin">#FFCFCE</color>
-    <color name="signup">#FFE0DF</color>
-    <color name="bgbox">#F3AFAF</color>
-    <color name="font">#FFECEC</color>
-    <color name="font2">#E46262</color>
-    <color name="bghome">#FFC0BE</color>
-    <color name="menu">#AA6B69</color>
-    <color name="button">#D48584</color>
+    <color name="pink">#FF7A8F</color>
+    <color name="pinkmuda">#FFBDC7</color>
+    <color name="abu">#A7A5AF</color>
+    <color name="abumuda">#7F7B87</color>
+    <color name="birumuda">#F1F5F9</color>
 
 
 </resources>
