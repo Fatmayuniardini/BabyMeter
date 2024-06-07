@@ -3,20 +3,33 @@
     <string name="logo_img" />
     <string name="btn_register">REGISTER</string>
     <string name="login">LOGIN</string>
-    <string name="login_account">LOGIN ACCOUNT</string>
-    <string name="username">"        Username"</string>
+    <string name="register">REGISTER</string>
+    <string name="login_account">Login to Baby Meter</string>
+    <string name="register_account">Register to Baby Meter</string>
+    <string name="username">"Username"</string>
     <string name="password">"        Password   "</string>
+    <string name="confirmpassword">"        Confirm Password   "</string>
     <string name="forgot_password">Forgot Password?</string>
     <string name="login_havent_account">
-         <font color="#FFECEC"><b>Don’t have an account?</b></font>
-        <font color="#E46262"><b>Register</b></font>
+         <font color="#A7A5AF"><b>Don’t have an account?</b></font>
+        <font color="#FF7A8F"><b>Register</b></font>
+    </string>
+    <string name="or_login_google">
+    <font color="#A7A5AF"><b>Or Login With</b></font>
+    </string>
+    <string name="or_register_google">
+        <font color="#A7A5AF"><b>Or Register With</b></font>
+    </string>
+    <string name="login_google">CONTINUE WITH GOOGLE</string>
+    <string name="forget_password">
+         <font color="#A7A5AF"><b>Forget Password?</b></font>
     </string>
     <string name="create_an_account">Create an account</string>
     <string name="nik">"        NIK"</string>
     <string name="email">"        Email"</string>
     <string name="have_an_account">
-         <font color="#FFECEC"><b>Already have an account?</b></font>
-        <font color="#E46262"><b>Login</b></font>
+         <font color="#A7A5AF"><b>Already have an account?</b></font>
+        <font color="#FF7A8F"><b>Login</b></font>
     </string>
     <string name="hello_world">hello world</string>
     <string name="welcome_to_home">Welcome to home</string>
@@ -31,6 +44,15 @@
     <string name="des_second">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
     <string name="third_screen">Be Better for your Children</string>
     <string name="dec_third">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+
+
+    <string name="title_home">HOME</string>
+    <string name="title_camera">CAMERA</string>
+    <string name="title_history">HISTORY</string>
+    <string name="title_profile">PROFILE</string>
+    <string name="title_activity_bottom_nav_view_model">BottomNavViewModel</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 
 
 </resources>

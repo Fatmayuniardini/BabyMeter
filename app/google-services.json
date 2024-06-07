@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "666638203383",
+    "project_id": "capstone-babymeter",
+    "storage_bucket": "capstone-babymeter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:666638203383:android:d6df5f9630ca49a00416f2",
+        "android_client_info": {
+          "package_name": "com.capstone.babymeter"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB066qxXDv7MtmJ7hQj6q9DbEE0ddOoggg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
