@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.babymeter"
+    namespace = "com.capstone.babymeter"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.babymeter"
+        applicationId = "com.capstone.babymeter"
         minSdk = 21
         targetSdk = 34
         versionCode = 1
@@ -35,7 +35,6 @@ android {
     }
     buildFeatures {
         viewBinding = true
-        dataBinding = true
     }
 }
 

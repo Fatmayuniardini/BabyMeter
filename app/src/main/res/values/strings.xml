@@ -1,36 +1,13 @@
 <resources>
-    <string name="app_name">Baby Meter</string>
-    <string name="logo_img" />
-    <string name="btn_register">REGISTER</string>
-    <string name="login">LOGIN</string>
-    <string name="login_account">LOGIN ACCOUNT</string>
-    <string name="username">"        Username"</string>
-    <string name="password">"        Password   "</string>
-    <string name="forgot_password">Forgot Password?</string>
-    <string name="login_havent_account">
-         <font color="#FFECEC"><b>Don’t have an account?</b></font>
-        <font color="#E46262"><b>Register</b></font>
-    </string>
-    <string name="create_an_account">Create an account</string>
-    <string name="nik">"        NIK"</string>
-    <string name="email">"        Email"</string>
-    <string name="have_an_account">
-         <font color="#FFECEC"><b>Already have an account?</b></font>
-        <font color="#E46262"><b>Login</b></font>
-    </string>
-    <string name="hello_world">hello world</string>
-    <string name="welcome_to_home">Welcome to home</string>
-    <string name="logout">LOGOUT</string>
-    <string name="confirmation_your_password">"       Confirmation Your Password"</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="welcome">Welcome to Baby Meter</string>
-    <string name="des_welcome">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt utlabore et dolore magna aliqua.</string>
+    <string name="app_name">OnBoardingPage</string>
+
+    <string name="title_menu_1">Welcome to Baby Meter</string>
+    <string name="title_menu_2">Let’s Join with Baby Meter</string>
+    <string name="title_menu_3">Be Better for your Children</string>
+    <string name="title_menu_4">aa yee</string>
+    <string name="desc_menu_1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </string>
+    <string name="desc_menu_2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </string>
+    <string name="desc_menu_3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </string>
+    <string name="desc_menu_4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </string>
     <string name="next">Next</string>
-    <string name="second">Let’s Join with Baby Meter</string>
-    <string name="des_second">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
-    <string name="third_screen">Be Better for your Children</string>
-    <string name="dec_third">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
-
-
 </resources>

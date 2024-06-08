@@ -1,4 +1,4 @@
-package com.capstone.babymeter
+package com.example.babymeter
 
 import org.junit.Test
 

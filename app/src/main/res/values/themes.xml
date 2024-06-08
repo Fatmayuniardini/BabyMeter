@@ -1,57 +1,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.BabyMeter" parent="Theme.Material3.DayNight.NoActionBar">
-       <item name="color">@color/pink</item>
-        <item name="colorOnBackground">@color/white</item>
-        <item name="textAppearanceBody1">@color/white</item>
-        <item name="textAppearanceBody2">@color/abumuda</item>
-        <item name="menu">@color/pinkmuda</item>
-        <item name="boxStrokeColor">@color/abu</item>
-        <item name="colorOnContainer">@color/birumuda</item>
-        <item name="colorOnContainerUnchecked">@color/pink</item>
-        <item name="colorButtonNormal">@color/abu</item>
-
-    </style>
-    <style name="button">
-        <item name="android:background">@drawable/bg_button</item>
-        <item name="android:fontFamily">@font/font</item>
-        <item name="android:textColor">@color/white</item>
-        <item name="android:textSize">14sp</item>
-        <item name="android:textStyle">bold</item>
-    </style>
-    <style name="buttonreg">
-        <item name="android:background">@drawable/buttonreg</item>
-        <item name="android:fontFamily">@font/font</item>
-        <item name="android:textColor">@color/white</item>
-        <item name="android:textSize">14sp</item>
-        <item name="android:textStyle">bold</item>
+    <style name="Base.Theme.OnBoardingPage" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
-    <style name="Title">
-        <item name="android:fontFamily">@font/font</item>
-        <item name="android:textColor">@color/white</item>
-        <item name="android:textSize">24sp</item>
-        <item name="android:textStyle">bold</item>
-    </style>
-    
-    <style name="TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
-        <item name="android:textColorHint">@color/white</item>
-        <item name="hintTextColor">@color/white</item>
-        <item name="startIconTint">@color/white</item>
-        <item name="boxStrokeWidth">0dp</item>
-        <item name="boxStrokeWidthFocused">0dp</item>
-    </style>
-
-    <style name="TextInputEditText" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
-        <item name="android:background">@drawable/bg_text_field</item>
-        <item name="android:fontFamily">@font/font</item>
-    </style>
-
-    <style name="SubTitle">
-        <item name="android:fontFamily">@font/font</item>
-        <item name="android:textColor">@color/white</item>
-        <item name="android:textSize">14sp</item>
-    </style>
-
-    <style name="Theme.BabyMeter" parent="Base.Theme.BabyMeter" />
+    <style name="Theme.OnBoardingPage" parent="Base.Theme.OnBoardingPage" />
 </resources>
