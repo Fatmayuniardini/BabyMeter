@@ -50,6 +50,8 @@
     <string name="title_camera">CAMERA</string>
     <string name="title_history">HISTORY</string>
     <string name="title_profile">PROFILE</string>
+    <string name="title_setting">SETTING</string>
+    <string name="title_logout">LOGOUT</string>
     <string name="title_activity_bottom_nav_view_model">BottomNavViewModel</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>

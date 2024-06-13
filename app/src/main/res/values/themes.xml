@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.BabyMeter" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.BabyMeter" parent="Theme.Material3.DayNight">
        <item name="color">@color/pink</item>
         <item name="colorOnBackground">@color/white</item>
         <item name="textAppearanceBody1">@color/white</item>
