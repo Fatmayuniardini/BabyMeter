@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,27 +14,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BabyMeter"
         tools:targetApi="31">
-        <activity
-            android:name=".ui.bottom_fragment.BottomNavViewModel"
-            android:exported="false"
-            android:label="@string/title_activity_bottom_nav_view_model" />
-        <activity
-            android:name=".customview.EditTextEmail"
+        <activity android:name=".MainActivity"
             android:exported="false" />
-        <activity
-            android:name=".customview.EditText"
+        <activity android:name=".RegisterActivity"
             android:exported="false" />
-        <activity
-            android:name=".HomeActivity"
+        <activity android:name=".LoginActivity"
             android:exported="false" />
-        <activity
-            android:name=".RegisterActivity"
+        <activity android:name=".OnboardingActivity"
             android:exported="false" />
-        <activity
-            android:name=".ui.login.LoginActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.main.MainActivity"
+        <activity android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

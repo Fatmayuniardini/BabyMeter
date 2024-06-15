@@ -1,15 +1,11 @@
 <resources>
     <string name="app_name">Baby Meter</string>
-    <string name="logo_img" />
-    <string name="btn_register">REGISTER</string>
     <string name="login">LOGIN</string>
     <string name="register">REGISTER</string>
     <string name="login_account">Login to Baby Meter</string>
     <string name="register_account">Register to Baby Meter</string>
     <string name="username">"Username"</string>
-    <string name="password">"        Password   "</string>
-    <string name="confirmpassword">"        Confirm Password   "</string>
-    <string name="forgot_password">Forgot Password?</string>
+    <string name="password">Password"</string>
     <string name="login_havent_account">
          <font color="#A7A5AF"><b>Don’t have an account?</b></font>
         <font color="#FF7A8F"><b>Register</b></font>
@@ -25,36 +21,35 @@
          <font color="#A7A5AF"><b>Forget Password?</b></font>
     </string>
     <string name="create_an_account">Create an account</string>
-    <string name="nik">"        NIK"</string>
-    <string name="email">"        Email"</string>
+    <string name="nik">"NIK"</string>
+    <string name="email">"Email"</string>
     <string name="have_an_account">
          <font color="#A7A5AF"><b>Already have an account?</b></font>
         <font color="#FF7A8F"><b>Login</b></font>
     </string>
-    <string name="hello_world">hello world</string>
-    <string name="welcome_to_home">Welcome to home</string>
-    <string name="logout">LOGOUT</string>
-    <string name="confirmation_your_password">"       Confirmation Your Password"</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="welcome">Welcome to Baby Meter</string>
-    <string name="des_welcome">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt utlabore et dolore magna aliqua.</string>
-    <string name="next">Next</string>
-    <string name="second">Let’s Join with Baby Meter</string>
-    <string name="des_second">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
-    <string name="third_screen">Be Better for your Children</string>
-    <string name="dec_third">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
 
+    <string name="title1">Welcome to BabyMeter</string>
+    <string name="title2">Easy to Measure baby </string>
+    <string name="title3">Track Baby Growth</string>
+    <string name="title4">Get Insight for Baby</string>
 
-    <string name="title_home">HOME</string>
-    <string name="title_camera">CAMERA</string>
-    <string name="title_history">HISTORY</string>
-    <string name="title_profile">PROFILE</string>
-    <string name="title_setting">SETTING</string>
-    <string name="title_logout">LOGOUT</string>
-    <string name="title_activity_bottom_nav_view_model">BottomNavViewModel</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="desc1">Your journey to track your baby growth and milestones starts here! Lets explore how BabyMeter can help you.</string>
+    <string name="desc2">Measuring a baby growth only with a camera can get accurate results. it is very easy to use everyday.</string>
+    <string name="desc3">Monitor your baby growth with ease. BabyMeter allows you to record and visualize weight, height, and head circumference over time.</string>
+    <string name="desc4">With BabyMeter you can provide baby nutrition categories that provide insight into being more aware of your baby health.</string>
+    <string name="InputBabyData">Input Baby Data</string>
+    <string name="namabayi">Name</string>
+    <string name="nikibu">NIK</string>
+    <string name="umurbayi">Age</string>
+    <string name="beratbayi">Weight</string>
+    <string name="buttonnext">NEXT</string>
+    <string name="uploadcamera">Upload Picture From Camera</string>
+    <string name="uploadgallery">Upload Picture From Gallery</string>
+    <string name="tv_name">NAME :</string>
+    <string name="tv_nik">NIK :</string>
+    <string name="tv_weight">WEIGHT :</string>
+    <string name="buttonscan">SCAN BABY</string>
+    <string name="tv_age">AGE :</string>
 
 
 </resources>
