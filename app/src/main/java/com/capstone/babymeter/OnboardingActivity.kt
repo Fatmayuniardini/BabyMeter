@@ -3,8 +3,8 @@ package com.capstone.babymeter
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.capstone.babymeter.auth.LoginActivity
 import com.capstone.babymeter.databinding.ActivityOnboardingBinding
-import com.capstone.babymeter.LoginActivity
 
 class OnboardingActivity : AppCompatActivity() {
     private lateinit var binding: ActivityOnboardingBinding

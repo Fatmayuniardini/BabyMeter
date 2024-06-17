@@ -1,95 +1,74 @@
-package com.capstone.babymeter
+package com.capstone.babymeter.auth
 
 import android.content.Intent
-import android.os.Build
 import android.os.Bundle
-import android.text.Html
 import android.text.SpannableString
 import android.text.Spanned
-import android.text.TextPaint
 import android.text.method.LinkMovementMethod
 import android.text.style.ClickableSpan
-import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
+import com.capstone.babymeter.R
 import com.capstone.babymeter.databinding.ActivityRegisterBinding
-import com.capstone.babymeter.LoginActivity
-import com.google.firebase.auth.FirebaseAuth
+import com.capstone.babymeter.model.request.RegisterRequest
 
 class RegisterActivity : AppCompatActivity() {
-
     private lateinit var binding: ActivityRegisterBinding
-    private lateinit var auth: FirebaseAuth
+    private val authViewModel: AuthViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        auth = FirebaseAuth.getInstance()
-
-        setClickableText()
-
         binding.registerButton.setOnClickListener {
             val email = binding.emailEditText.text.toString()
             val password = binding.passwordEditText.text.toString()
-
-            createAccount(email, password)
-        }
-    }
-
-    private fun setClickableText() {
-        val text = getString(R.string.have_an_account)
-        val spannableString = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            SpannableString(Html.fromHtml(text, Html.FROM_HTML_MODE_LEGACY))
-        } else {
-            SpannableString(Html.fromHtml(text))
+            val name = binding.nameEditText.text.toString()
+            val registerRequest = RegisterRequest(email, password, name)
+            authViewModel.register(registerRequest)
         }
 
+        // Handle click on "Register" part of the TextView
+        val spannableString = SpannableString(getString(R.string.have_an_account))
         val clickableSpan = object : ClickableSpan() {
-            override fun onClick(widget: View) {
+            override fun onClick(view: View) {
                 val intent = Intent(this@RegisterActivity, LoginActivity::class.java)
                 startActivity(intent)
             }
-
-            override fun updateDrawState(ds: TextPaint) {
-                super.updateDrawState(ds)
-                ds.isUnderlineText = false // Menonaktifkan garis bawah
-            }
         }
+        spannableString.setSpan(clickableSpan, spannableString.indexOf("Login"),
+            spannableString.indexOf("Login") + "Login".length, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
 
-        val start = spannableString.indexOf("Login")
-        if (start != -1) {
-            val end = start + "Login".length
-            spannableString.setSpan(clickableSpan, start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
-        }
-
+        // Set TextView text and make "Register" clickable
         binding.haveAnAccount.text = spannableString
         binding.haveAnAccount.movementMethod = LinkMovementMethod.getInstance()
-    }
 
-    private fun createAccount(email: String, password: String) {
-        auth.createUserWithEmailAndPassword(email, password)
-            .addOnCompleteListener(this) { task ->
-                if (task.isSuccessful) {
-                    // Sign in success, update UI with the signed-in user's information
-                    Log.d(TAG, "createUserWithEmail:success")
-                    val user = auth.currentUser
-                    // Navigate to main activity or another screen
-                    val intent = Intent(this, MainActivity::class.java)
-                    startActivity(intent)
-                    finish()
-                } else {
-                    // If sign in fails, display a message to the user.
-                    Log.w(TAG, "createUserWithEmail:failure", task.exception)
-                    val message = "Authentication failed: ${task.exception?.message}"
-                    Toast.makeText(baseContext, message, Toast.LENGTH_SHORT).show()
+        authViewModel.authState.observe(this, Observer { authState ->
+            when (authState) {
+                is AuthState.Idle -> {
+                    // Initial state or after logout
+                    binding.progressBar.visibility = View.GONE
+                }
+                is AuthState.Loading -> {
+                    // Show loading indicator
+                    binding.progressBar.visibility = View.VISIBLE
+                }
+                is AuthState.Success -> {
+                    // Handle successful registration
+                    binding.progressBar.visibility = View.GONE
+                    Toast.makeText(this, "Registration Successful", Toast.LENGTH_SHORT).show()
+                    // Navigate to the next screen or login screen
+                }
+                is AuthState.Error -> {
+                    // Handle failed registration
+                    binding.progressBar.visibility = View.GONE
+                    Toast.makeText(this, "Registration Failed: ${authState.message}", Toast.LENGTH_SHORT).show()
                 }
             }
-    }
-
-    companion object {
-        private const val TAG = "RegisterActivity"
+        })
     }
 }

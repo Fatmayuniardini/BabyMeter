@@ -1,83 +1,90 @@
-package com.capstone.babymeter
+package com.capstone.babymeter.auth
 
+import android.content.Context
 import android.content.Intent
-import android.os.Build
 import android.os.Bundle
-import android.text.Html
 import android.text.SpannableString
 import android.text.Spanned
-import android.text.TextPaint
 import android.text.method.LinkMovementMethod
 import android.text.style.ClickableSpan
 import android.view.View
+import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
+import com.capstone.babymeter.MainActivity
+import com.capstone.babymeter.R
 import com.capstone.babymeter.databinding.ActivityLoginBinding
-import com.google.firebase.auth.FirebaseAuth
 
 class LoginActivity : AppCompatActivity() {
-
     private lateinit var binding: ActivityLoginBinding
-    private lateinit var auth: FirebaseAuth
+    private val authViewModel: AuthViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        auth = FirebaseAuth.getInstance()
-
-        setClickableText()
+        // Check if user is already logged in
+        val sharedPrefs = getSharedPreferences("login_prefs", Context.MODE_PRIVATE)
+        val isLoggedIn = sharedPrefs.getBoolean("isLoggedIn", false)
+        if (isLoggedIn) {
+            // Directly go to MainActivity
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
+            return
+        }
 
         binding.loginButton.setOnClickListener {
             val email = binding.emailEditText.text.toString()
             val password = binding.passwordEditText.text.toString()
-
-            signInUser(email, password)
-        }
-    }
-
-    private fun setClickableText() {
-        val text = getString(R.string.login_havent_account)
-        val spannableString = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            SpannableString(Html.fromHtml(text, Html.FROM_HTML_MODE_LEGACY))
-        } else {
-            SpannableString(Html.fromHtml(text))
+            authViewModel.login(email, password)
         }
 
+        // Handle click on "Register" part of the TextView
+        val spannableString = SpannableString(getString(R.string.login_havent_account))
         val clickableSpan = object : ClickableSpan() {
-            override fun onClick(widget: View) {
+            override fun onClick(view: View) {
                 val intent = Intent(this@LoginActivity, RegisterActivity::class.java)
                 startActivity(intent)
             }
-
-            override fun updateDrawState(ds: TextPaint) {
-                super.updateDrawState(ds)
-                ds.isUnderlineText = false // Menonaktifkan garis bawah
-            }
         }
+        spannableString.setSpan(clickableSpan, spannableString.indexOf("Register"),
+            spannableString.indexOf("Register") + "Register".length, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
 
-        val start = spannableString.indexOf("Register")
-        val end = start + "Register".length
-        spannableString.setSpan(clickableSpan, start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
-
+        // Set TextView text and make "Register" clickable
         binding.tvHaventAccount.text = spannableString
         binding.tvHaventAccount.movementMethod = LinkMovementMethod.getInstance()
-    }
 
-    private fun signInUser(email: String, password: String) {
-        auth.signInWithEmailAndPassword(email, password)
-            .addOnCompleteListener(this) { task ->
-                if (task.isSuccessful) {
-                    // Sign in success, update UI with the signed-in user's information
-                    val user = auth.currentUser
-                    // Navigate to main activity or another screen
-                    val intent = Intent(this, MainActivity::class.java)
+        authViewModel.authState.observe(this, Observer { authState ->
+            when (authState) {
+                is AuthState.Idle -> {
+                    // Initial state or after logout
+                    binding.progressBar.visibility = View.GONE
+                }
+                is AuthState.Loading -> {
+                    // Show loading indicator
+                    binding.progressBar.visibility = View.VISIBLE
+                }
+                is AuthState.Success -> {
+                    // Handle successful login
+                    binding.progressBar.visibility = View.GONE
+                    Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show()
+
+                    // Save login status in SharedPreferences
+                    sharedPrefs.edit().putBoolean("isLoggedIn", true).apply()
+
+                    // Navigate to MainActivity
+                    val intent = Intent(this@LoginActivity, MainActivity::class.java)
                     startActivity(intent)
-                    finish()
-                } else {
-                    // If sign in fails, display a message to the user.
-                    binding.messageTextView.text = "Authentication failed!"
+                    finish() // Finish LoginActivity to prevent returning to it with back button
+                }
+                is AuthState.Error -> {
+                    // Handle failed login
+                    binding.progressBar.visibility = View.GONE
+                    Toast.makeText(this, "Login Failed: ${authState.message}", Toast.LENGTH_SHORT).show()
                 }
             }
+        })
     }
 }

@@ -5,8 +5,9 @@ import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
 import android.content.Intent
+import com.capstone.babymeter.auth.LoginActivity
 import com.google.firebase.FirebaseApp
-import com.capstone.babymeter.LoginActivity
+
 
 class SplashActivity : AppCompatActivity() {
 
@@ -17,14 +18,16 @@ class SplashActivity : AppCompatActivity() {
         FirebaseApp.initializeApp(this)
 
         Handler(Looper.getMainLooper()).postDelayed({
-            val sharedPreferences = getSharedPreferences("appPreferences", MODE_PRIVATE)
-            val isFirstRun = sharedPreferences.getBoolean("isFirstRun", true)
+            val sharedPreferences = getSharedPreferences("login_prefs", MODE_PRIVATE)
+            val isLoggedIn = sharedPreferences.getBoolean("isLoggedIn", false)
 
-            if (isFirstRun) {
-                startActivity(Intent(this, OnboardingActivity::class.java))
+            val targetActivity = if (isLoggedIn) {
+                MainActivity::class.java
             } else {
-                startActivity(Intent(this, LoginActivity::class.java))
+                LoginActivity::class.java
             }
+
+            startActivity(Intent(this, targetActivity))
             finish()
         }, 3000) // Delay 3 seconds
     }
