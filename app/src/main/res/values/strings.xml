@@ -50,6 +50,23 @@
     <string name="tv_weight">WEIGHT :</string>
     <string name="buttonscan">SCAN BABY</string>
     <string name="tv_age">AGE :</string>
+    <string name="manfaat">Manfaat</string>
+    <string name="manfaatapp">Aplikasi \'Baby Meter\' melakukan pengukuran otomatis tinggi, berat, lingkar kepala, dan BMI bayi via scan kamera/foto serta memberi evaluasi kesehatan dan laporan medis aman.</string>
+    <string name="start_multiline">Start n/
+    Scanning the baby</string>
+    <string name="start">Start\nscanning the baby\n</string>
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="usernameapp">Username</string>
+    <string name="logout">Logout</string>
+    <string name="history">History</string>
+    <string name="lingkar_kepala">Lingkar Kepala</string>
+    <string name="lingkar_kaki">Lingkar Kaki</string>
+    <string name="lingkar_badan">Lingkar Badan</string>
+    <string name="tinggi_badan">Tinggi Badan</string>
+    <string name="category">Category</string>
+    <string name="details">Details</string>
+    <string name="change">CHANGE</string>
 
 
 </resources>

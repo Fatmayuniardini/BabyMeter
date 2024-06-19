@@ -1,18 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FF9800"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#FFFF"
     tools:context=".fragments.HomeFragment">
 
-    <TextView
-        android:gravity="center"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:textSize="32sp"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Home" />
+        android:layout_height="wrap_content">
 
-</FrameLayout>
+        <!-- Your existing content goes here -->
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="418dp"
+            android:layout_height="213dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@color/pink" />
+
+        <TextView
+            android:id="@+id/BabyMeter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="-100dp"
+            android:layout_marginTop="14dp"
+            android:text="@string/app_name"
+            android:textColor="@color/white"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/descbabymeter"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="-95dp"
+            android:layout_marginTop="60dp"
+            android:text="Baby Meter merupakan aplikasi yang akan mempermudah kerja dari perawat atau bidan dibidang sunting"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:textStyle="normal" />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginStart="180dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/bghome" />
+
+        <TextView
+            android:id="@+id/BabyMeter2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="220dp"
+            android:layout_marginStart="-100dp"
+            android:text="@string/app_name"
+            android:textColor="@color/pink"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="320dp"
+            android:layout_height="130dp"
+            android:background="@drawable/bg_button"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="270dp">
+
+            <TextView
+                android:id="@+id/manfaat"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-10dp"
+                android:layout_marginTop="5dp"
+                android:text="Manfaat"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.133"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/manfaataplikasi"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-45dp"
+                android:textSize="15sp"
+                android:textStyle="normal"
+                android:textColor="@color/white"
+                android:text="@string/manfaatapp"
+                app:layout_constraintTop_toBottomOf="@id/manfaat"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/bayimanfaat"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="230dp"
+                android:layout_marginTop="30dp" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+            android:id="@+id/buttoncam"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="410dp"
+            android:layout_marginEnd="30dp"
+            android:text="@string/start"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:gravity="fill_vertical"
+            android:drawableRight="@drawable/panah"
+            android:background="@drawable/bg_button" />
+
+    </FrameLayout>
+
+</ScrollView>
