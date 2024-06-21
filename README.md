@@ -30,8 +30,8 @@ This application was built using :
 - Utils: Constants, Extensions
   
 ## Screenshot
-https://storage.googleapis.com/asset-design/asset%20for%20MD/Cuplikan%20layar%202024-06-21%20162459.png
-https://storage.googleapis.com/asset-design/asset%20for%20MD/Cuplikan%20layar%202024-06-21%20162459.png
+![MOCKUP](https://storage.googleapis.com/asset-design/asset%20for%20MD/Cuplikan%20layar%202024-06-21%20162459.png)
+![MOCKUP](https://storage.googleapis.com/asset-design/asset%20for%20MD/Cuplikan%20layar%202024-06-21%20162459.png)
 
 ## Demo Application
 https://drive.google.com/file/d/1v1-_jw7RVEMkoWLODLRHzkQbZFQRQJuG/view?usp=drivesdk
