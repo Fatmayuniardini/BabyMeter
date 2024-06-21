@@ -1,4 +1,4 @@
-package com.capstone.babymeter.history
+package com.capstone.babymeter.ui.history
 
 import android.content.Context
 import android.content.Intent
@@ -9,7 +9,6 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.capstone.babymeter.R
 
 class HistoryAdapter(
@@ -17,22 +16,18 @@ class HistoryAdapter(
     private val context: Context
 ) : RecyclerView.Adapter<HistoryAdapter.HistoryViewHolder>() {
 
-
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HistoryViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_row_history, parent, false)
         return HistoryViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: HistoryViewHolder, position: Int) {
-        val item = historyList[position]
-        holder.name.text = item.name
-        holder.description.text = item.nik // Sesuaikan dengan yang ingin Anda tampilkan di deskripsi
-        Glide.with(context).load(item.imageUrl).into(holder.photo)
+        val historyItem = historyList[position]
+        holder.bind(historyItem)
 
         holder.itemView.setOnClickListener {
             val intent = Intent(context, DetailsActivity::class.java).apply {
-                putExtra("item", item)
+                putExtra("nik", historyItem.nik)
             }
             context.startActivity(intent)
         }
@@ -41,9 +36,14 @@ class HistoryAdapter(
     override fun getItemCount() = historyList.size
 
     class HistoryViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val name: TextView = itemView.findViewById(R.id.tv_item_name)
-        val description: TextView = itemView.findViewById(R.id.tv_item_description)
-        val photo: ImageView = itemView.findViewById(R.id.img_item_photo)
+        private val imageView: ImageView = itemView.findViewById(R.id.img_item_photo)
+        private val nameTextView: TextView = itemView.findViewById(R.id.tv_item_name)
+        private val nikTextView: TextView = itemView.findViewById(R.id.tv_item_NIK)
 
+        fun bind(historyItem: HistoryItem) {
+            nameTextView.text = historyItem.name
+            nikTextView.text = historyItem.nik
+            imageView.setImageResource(R.drawable.baby)
+        }
     }
 }

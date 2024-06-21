@@ -1,4 +1,4 @@
-package com.capstone.babymeter.fragments
+package com.capstone.babymeter.ui.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
 import com.capstone.babymeter.R
-import com.capstone.babymeter.fragments.InputDataFragment
+import com.capstone.babymeter.ui.predictions.InputDataFragment
 
 class HomeFragment : Fragment() {
 

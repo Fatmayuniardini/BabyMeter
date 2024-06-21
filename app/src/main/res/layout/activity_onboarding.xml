@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layoutDescription="@xml/activity_splash_scene"
-    tools:context=".OnboardingActivity">
+    tools:context=".ui.splash.OnboardingActivity">
 
     <ImageView
         android:id="@+id/logoMenu1"

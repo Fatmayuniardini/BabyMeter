@@ -67,6 +67,16 @@
     <string name="category">Category</string>
     <string name="details">Details</string>
     <string name="change">CHANGE</string>
-
+    <string name="chest_size">Chest Size</string>
+    <string name="head_circumference">Head Circumference</string>
+    <string name="arm_circumference">Arm Circumference</string>
+    <string name="thigh_circumference">Thigh Circumference</string>
+    <string name="abdominal_circumference">Abdominal Circumference</string>
+    <string name="height">Height</string>
+    <string name="categori">Categori</string>
+    <string name="save">SAVE</string>
+    <string name="deskripsi">Deskripsi</string>
+    <string name="delete">DELETE</string>
+    <string name="toh_istory">GO TO HISTORY</string>
 
 </resources>

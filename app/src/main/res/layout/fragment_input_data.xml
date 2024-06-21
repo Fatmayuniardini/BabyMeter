@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.InputDataFragment">
+    android:id="@+id/inputdatafragment"
+    tools:context=".ui.predictions.InputDataFragment">
 
     <!-- Title -->
     <TextView
@@ -113,14 +114,55 @@
     </com.google.android.material.textfield.TextInputLayout>
 
 
-    <!-- Submit Button -->
+    <ImageView
+        android:id="@+id/image_add"
+        android:layout_width="230dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/baseline_linked_camera"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/weightInputLayout" />
+
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/nextButton"
-        android:layout_width="200dp"
+        android:id="@+id/btn_camera"
+        android:layout_width="130dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="20dp"
+        android:drawableBottom="@drawable/baseline_camera"
+        android:paddingBottom="8dp"
+        android:background="@drawable/dashed_border"
+        android:fontFamily="@font/ibmplexsans_medium"
+        android:text="@string/uploadcamera"
+        android:textAllCaps="false"
+        android:textColor="?android:attr/textColorPrimary"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/image_add"
+        app:layout_constraintTop_toTopOf="@+id/image_add" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/gallery_button"
+        android:layout_width="130dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/dashed_border"
+        android:drawableBottom="@drawable/baseline_gallery"
+        android:text="@string/uploadgallery"
+        android:fontFamily="@font/ibmplexsans_medium"
+        android:paddingBottom="8dp"
+        android:textAllCaps="false"
+        android:textColor="?android:attr/textColorPrimary"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/btn_camera"
+        app:layout_constraintTop_toBottomOf="@+id/btn_camera" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/upload_button"
+        android:layout_width="300dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="50dp"
         android:background="@color/pink"
-        android:text="@string/buttonnext"
+        android:text="@string/buttonscan"
         android:fontFamily="@font/ibmplexsans_medium"
         android:textColor="@color/white"
         android:textSize="16sp"
@@ -128,7 +170,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/weightInputLayout"
-        app:layout_constraintVertical_bias="0.108" />
+        app:layout_constraintTop_toBottomOf="@+id/gallery_button"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

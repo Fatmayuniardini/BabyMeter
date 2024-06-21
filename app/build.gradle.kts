@@ -67,6 +67,12 @@ dependencies {
     implementation("com.github.qamarelsafadi:CurvedBottomNavigation:0.1.3")
     implementation ("com.github.bumptech.glide:glide:4.12.0")
     annotationProcessor ("com.github.bumptech.glide:compiler:4.12.0")
+    implementation ("com.google.firebase:firebase-firestore:23.0.3")
+    implementation ("com.google.firebase:firebase-storage:20.0.0")
+    implementation ("com.squareup.okhttp3:okhttp:4.9.3")
+    implementation ("com.squareup.picasso:picasso:2.71828")
+    implementation ("com.google.firebase:firebase-appcheck-ktx")
+    implementation ("com.google.firebase:firebase-appcheck-playintegrity")
 
 
 

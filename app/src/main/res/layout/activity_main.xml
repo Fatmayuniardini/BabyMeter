@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".ui.main.MainActivity">
 
     <!-- AppBar containing TextView and ImageView -->
     <androidx.appcompat.widget.Toolbar
@@ -29,19 +29,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" />
-
-        <ImageView
-            android:id="@+id/buttonProfile"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginEnd="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.882"
-            app:layout_constraintStart_toEndOf="@+id/nameUser"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/baseline_person"
-            android:layout_gravity="end"/>
 
     </androidx.appcompat.widget.Toolbar>
 

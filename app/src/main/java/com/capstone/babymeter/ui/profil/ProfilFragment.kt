@@ -1,8 +1,10 @@
-package com.capstone.babymeter.fragments
+package com.capstone.babymeter.ui.profil
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.graphics.Canvas
 import android.graphics.Paint
 import android.graphics.PorterDuff
@@ -11,6 +13,7 @@ import android.graphics.Rect
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
+import android.util.Base64
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -19,19 +22,25 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.appcompat.app.AlertDialog
+import androidx.lifecycle.ViewModelProvider
 import com.capstone.babymeter.R
-import com.capstone.babymeter.SplashActivity
+import com.capstone.babymeter.ui.splash.SplashActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import java.io.ByteArrayOutputStream
 
 class ProfilFragment : Fragment() {
 
+    private val PICK_IMAGE_REQUEST = 1
     private lateinit var auth: FirebaseAuth
     private var user: FirebaseUser? = null
     private lateinit var ivProfilePicture: ImageView
 
     private val REQUEST_CAMERA = 1
     private val REQUEST_GALLERY = 2
+    private val REQUEST_LOGOUT = 3
+
+    private lateinit var viewModel: ProfileViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -60,15 +69,30 @@ class ProfilFragment : Fragment() {
             showPhotoDialog()
         }
 
+        // Inisialisasi ViewModel
+        viewModel = ViewModelProvider(this).get(ProfileViewModel::class.java)
+
         // Find the Logout button and set an OnClickListener
         val logoutButton: Button = view.findViewById(R.id.Logout)
         logoutButton.setOnClickListener {
-            // Sign out user
-            auth.signOut()
-            // Intent to navigate to SplashScreenActivity
+            viewModel.logout()
+            // Hapus status login dari SharedPreferences
+            val sharedPrefs = requireActivity().getSharedPreferences("login_prefs", Context.MODE_PRIVATE)
+            sharedPrefs.edit().putBoolean("isLoggedIn", false).apply()
+
+            // Mulai aktivitas SplashScreen
             val intent = Intent(activity, SplashActivity::class.java)
             startActivity(intent)
-            activity?.finish() // Optional: finish the current activity
+            requireActivity().finish()
+        }
+
+        // Load profile picture from Shared Preferences
+        val sharedPreferences = activity?.getSharedPreferences("MyPreferences", Context.MODE_PRIVATE)
+        val base64String = sharedPreferences?.getString("ProfilePicture", "")
+        if (base64String != "") {
+            val byteArray = Base64.decode(base64String, Base64.DEFAULT)
+            val bitmap = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.size)
+            ivProfilePicture.setImageBitmap(bitmap)
         }
 
         return view
@@ -106,7 +130,7 @@ class ProfilFragment : Fragment() {
                     val imageBitmap = data?.extras?.get("data") as Bitmap
                     val circularBitmap = getCircularBitmap(imageBitmap)
                     ivProfilePicture.setImageBitmap(circularBitmap)
-                    // Simpan gambar ke Firebase Storage atau lokasi yang diinginkan
+                    saveProfilePicture(circularBitmap)
                 }
 
                 REQUEST_GALLERY -> {
@@ -117,7 +141,7 @@ class ProfilFragment : Fragment() {
                     )
                     val circularBitmap = getCircularBitmap(bitmap)
                     ivProfilePicture.setImageBitmap(circularBitmap)
-                    // Simpan gambar ke Firebase Storage atau lokasi yang diinginkan
+                    saveProfilePicture(circularBitmap)
                 }
             }
         }
@@ -142,5 +166,17 @@ class ProfilFragment : Fragment() {
         canvas.drawBitmap(bitmap, rect, rect, paint)
 
         return output
+    }
+
+    private fun saveProfilePicture(bitmap: Bitmap) {
+        val byteArrayOutputStream = ByteArrayOutputStream()
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream)
+        val byteArray = byteArrayOutputStream.toByteArray()
+        val base64String = Base64.encodeToString(byteArray, Base64.DEFAULT)
+
+        val sharedPreferences = activity?.getSharedPreferences("MyPreferences", Context.MODE_PRIVATE)
+        val editor = sharedPreferences?.edit()
+        editor?.putString("ProfilePicture", base64String)
+        editor?.apply()
     }
 }

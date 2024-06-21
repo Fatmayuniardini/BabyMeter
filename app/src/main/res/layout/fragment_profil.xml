@@ -4,11 +4,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.ProfilFragment">
+    tools:context=".ui.profil.ProfilFragment">
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="416dp"
+        android:layout_width="match_parent"
         android:layout_height="254dp"
         android:adjustViewBounds="true"
         android:foregroundGravity="center"
@@ -18,9 +18,8 @@
 
     <ImageView
         android:id="@+id/ivProfilePicture"
-        android:layout_width="150dp"
+        android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:layout_marginStart="110dp"
         android:layout_marginTop="28dp"
         android:src="@drawable/profil"
         android:foregroundGravity="center"
@@ -31,9 +30,10 @@
 
     <Button
         android:id="@+id/btnChangePhoto"
-        android:layout_width="119dp"
+        android:layout_width="match_parent"
         android:layout_height="36dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginEnd="150dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/bg_button"
         android:text="@string/change"
@@ -42,7 +42,7 @@
 
     <TextView
         android:id="@+id/tvProfileName"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="28dp"

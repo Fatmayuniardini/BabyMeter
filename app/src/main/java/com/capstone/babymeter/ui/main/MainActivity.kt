@@ -1,12 +1,13 @@
-package com.capstone.babymeter
+package com.capstone.babymeter.ui.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import com.capstone.babymeter.fragments.HomeFragment
-import com.capstone.babymeter.fragments.InputDataFragment
-import com.capstone.babymeter.fragments.ProfilFragment
-import com.capstone.babymeter.history.HistoryFragment
+import com.capstone.babymeter.R
+import com.capstone.babymeter.ui.home.HomeFragment
+import com.capstone.babymeter.ui.predictions.InputDataFragment
+import com.capstone.babymeter.ui.profil.ProfilFragment
+import com.capstone.babymeter.ui.history.HistoryFragment
 import com.qamar.curvedbottomnaviagtion.CurvedBottomNavigation
 import com.google.firebase.auth.FirebaseAuth
 
@@ -22,16 +23,16 @@ class MainActivity : AppCompatActivity() {
 
         val bottomNavigation = findViewById<CurvedBottomNavigation>(R.id.bottomNavigation)
         bottomNavigation.add(
-            CurvedBottomNavigation.Model(1,"Home",R.drawable.baseline_home)
+            CurvedBottomNavigation.Model(1,"Home", R.drawable.baseline_home)
         )
         bottomNavigation.add(
-            CurvedBottomNavigation.Model(2,"Camera",R.drawable.baseline_camera)
+            CurvedBottomNavigation.Model(2,"Camera", R.drawable.baseline_camera)
         )
         bottomNavigation.add(
-            CurvedBottomNavigation.Model(3,"History",R.drawable.baseline_history)
+            CurvedBottomNavigation.Model(3,"History", R.drawable.baseline_history)
         )
         bottomNavigation.add(
-            CurvedBottomNavigation.Model(4,"Profile",R.drawable.baseline_person)
+            CurvedBottomNavigation.Model(4,"Profile", R.drawable.baseline_person)
         )
 
         bottomNavigation.setOnClickMenuListener {
