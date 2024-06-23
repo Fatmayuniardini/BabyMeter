@@ -28,10 +28,13 @@ This application was built using :
 - Repository: AuthRepository, DataRepository
 - Network: ApiService, ApiClient
 - Utils: Constants, Extensions
+
+## Figma Prototype
+https://www.figma.com/design/8Dn6Xot8CdHFbvTswC8b6O/BabyMeter's-UI%2FUX?node-id=0-1&t=qTQRYUck9GSiWJuO-1
   
 ## Screenshot
 ![MOCKUP](https://storage.googleapis.com/asset-design/asset%20for%20MD/Cuplikan%20layar%202024-06-21%20162459.png)
-![MOCKUP](https://storage.googleapis.com/asset-design/asset%20for%20MD/Cuplikan%20layar%202024-06-21%20162459.png)
+![MOCKUP](https://storage.googleapis.com/asset-design/asset%20for%20MD/Cuplikan%20layar%202024-06-21%20162540.png)
 
 ## How to upload photos
 - Position the camera vertically 
