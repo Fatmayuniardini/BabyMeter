@@ -33,5 +33,9 @@ This application was built using :
 ![MOCKUP](https://storage.googleapis.com/asset-design/asset%20for%20MD/Cuplikan%20layar%202024-06-21%20162459.png)
 ![MOCKUP](https://storage.googleapis.com/asset-design/asset%20for%20MD/Cuplikan%20layar%202024-06-21%20162459.png)
 
+## How to upload photos
+- Position the camera vertically 
+- put a white 500 coin next to the baby (the function of this coin is for comparison so that it can be measured)
+
 ## Demo Application
 https://drive.google.com/file/d/1v1-_jw7RVEMkoWLODLRHzkQbZFQRQJuG/view?usp=drivesdk
